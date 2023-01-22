@@ -87,6 +87,11 @@ function buildCharts(subjectId) {
       x: ids,
       y: values,
       mode: 'markers',
+      marker:{
+        size: values,
+        color: ids,
+        colorscale: 'Earth'
+      }
       
       
     };
@@ -110,23 +115,23 @@ function buildCharts(subjectId) {
         value: 2,
         title: { text: "Belly Button Washing frequency" },
         type: "indicator",
-        mode: "gauge+number+delta",
-        delta: { reference: 380 },
+        mode: "gauge+number",
         gauge: {
-          axis: { range: [null, 500] },
+          axis: { range: [null, 10] },
+          bar: { color: "black" },
           steps: [
             { range: [0, 2], color: "red" },
             { range: [2, 4], color: "orange" },
             { range: [4, 6], color: "yellow" },
-            { range: [6, 8], color: "green" },
+            { range: [6, 8], color: "lightgreen" },
             { range: [8, 10], color: "green" },
 
           ],
-          threshold: {
-            line: { color: "red", width: 4 },
-            thickness: 0.75,
-            value: 490
-          }
+          // threshold: {
+          //   line: { color: "red", width: 4 },
+          //   thickness: 0.75,
+          //   value: 490
+          // }
         }
       }
     ];
